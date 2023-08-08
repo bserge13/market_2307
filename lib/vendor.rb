@@ -19,17 +19,10 @@ class Vendor
       item.price * @inventory[item]
     end 
   end
+
+  def items_names
+    @inventory.keys.map do |item|
+      item.name 
+    end
+  end
 end
-
-
-
-
-    # require 'pry'; binding.pry
-    # items = []
-    # @inventory.each do |inventory_hash| 
-    #   items << inventory_hash
-    # end
-    # items.map do |item|
-    #   item.price * item.values
-    # end
-    #the sum of all their items' price * quantity.
