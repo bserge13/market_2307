@@ -53,7 +53,7 @@ RSpec.describe Market do
 
       expected = ["Banana Nice Cream", 'Peach', "Peach-Raspberry Nice Cream", 'Tomato']
       expect(market.sorted_item_list).to eq(expected)
-
+# require 'pry'; binding.pry
       expect(market.overstocked_items).to eq([item1])
     end
   end

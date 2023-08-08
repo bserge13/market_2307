@@ -35,9 +35,9 @@ class Market
   end
 
   def overstocked_items
-    @vendors.detect do |vendor|
-      # require 'pry'; binding.pry
-      vendor.inventory == vendor.inventory
+    @vendors.map do |vendor|
+      vendor.inventory.count == 2 
+      vendor
     end 
   end 
     # over_stock = []
