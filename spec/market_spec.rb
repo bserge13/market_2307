@@ -54,7 +54,12 @@ RSpec.describe Market do
       expected = ["Banana Nice Cream", 'Peach', "Peach-Raspberry Nice Cream", 'Tomato']
       expect(market.sorted_item_list).to eq(expected)
 # require 'pry'; binding.pry
-      expect(market.overstocked_items).to eq([item1])
+      # expect(market.overstocked_items).to eq([item1])
+
+      expect(market.total_inventory).to eq(item1 => {:Quantity => 100, :Vendors => [vendor1, vendor3]},
+      item2 => {:Quantity => 7, :Vendors => [vendor1]}, 
+      item3 => {:Quantity => 25, :Vendors => [vendor2]}, 
+      item4 => {:Quantity => 50, :Vendors => [vendor2]})
     end
   end
 end

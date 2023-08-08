@@ -31,7 +31,25 @@ class Market
   end
 
   def total_inventory
-    total_inventory = Hash.new(0)
+    item_inventory = Hash.new(0)
+      @vendors.each do |vendor| 
+        vendor.inventory.each do |item| 
+        item_inventory[item[0]] = {:Quantity => quantity(item[0]), :Vendors => vendors_that_sell(item[0])}
+        end
+      end
+    item_inventory
+  end
+
+  def quantity(item)
+    total = 0
+    @vendors.each do |vendor|
+      vendor.inventory.each do |value|
+        if item == value[0]
+          total += value[1]
+        end
+      end
+    end
+    total
   end
 
   def overstocked_items
