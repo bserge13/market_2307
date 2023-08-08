@@ -2,7 +2,6 @@ require 'rspec'
 require './lib/vendor'
 require './lib/item'
 
-
 RSpec.describe Vendor do 
   it '#exists' do 
     vendor = Vendor.new("Rocky Mountain Fresh")
